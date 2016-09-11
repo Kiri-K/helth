@@ -16,8 +16,9 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
 //    "tag"はカレンダー内の日
     var tag: Int!
     var number: Int! = 0
+    var day = 0;
     @IBOutlet var label: UILabel!
-
+   
     
     
     override func viewDidLoad() {
@@ -54,7 +55,7 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
         let cell : CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath) as! CustomCell
         cell.date.text = String(number)
         cell.date.userInteractionEnabled = true
-        cell.date.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tap:"))
+        cell.date.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CalenderViewController.tap(_:))))
         
         
         
@@ -62,9 +63,22 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func tap(sender: UITapGestureRecognizer)  {
-        performSegueWithIdentifier("toDetail", sender: nil)
-        //print("aaa")
+        let label = sender.view as! UILabel
+        day = Int(label.text!)!
         
+        performSegueWithIdentifier("toDetail", sender: nil)
+        
+        //print("aaa")
+    
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toDetail"{
+            let detailViewControlloer = segue.destinationViewController as! DetailViewController
+            detailViewControlloer.month = self.tag
+            detailViewControlloer.day = self.day
+            
+        }
     }
     
 //    UICollectionViewDelegate

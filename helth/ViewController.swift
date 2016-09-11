@@ -109,28 +109,33 @@ class ViewController: UIViewController {
             }
        }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "toCalender" {
+            
+            let calenderViewController = segue.destinationViewController as! CalenderViewController
+            calenderViewController.tag = self.tag
+            
+        }
+    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func toMemoView(sender: AnyObject) {
+        
+        performSegueWithIdentifier("toMemoView", sender: nil)
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toCalender" {
-            
-          let calenderViewController = segue.destinationViewController as! CalenderViewController
-            
-            calenderViewController.tag = self.tag
-
-            
-            
-        }
     }
 
 }
