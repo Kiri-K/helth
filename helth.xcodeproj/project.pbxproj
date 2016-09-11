@@ -15,6 +15,8 @@
 		4B9C8E5C1D4C56770025B12A /* helthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E5B1D4C56770025B12A /* helthTests.swift */; };
 		4B9C8E671D4C56770025B12A /* helthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E661D4C56770025B12A /* helthUITests.swift */; };
 		4BEAC2F41D4DA390007B4108 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */; };
+		4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF713B71D8517AA00F1851E /* CustomCell.swift */; };
+		4BF713BA1D85237300F1851E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF713B91D85237300F1851E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4B9C8E661D4C56770025B12A /* helthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helthUITests.swift; sourceTree = "<group>"; };
 		4B9C8E681D4C56770025B12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		4BF713B71D8517AA00F1851E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		4BF713B91D85237300F1851E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				4B9C8E4D1D4C56760025B12A /* Assets.xcassets */,
 				4B9C8E4F1D4C56760025B12A /* LaunchScreen.storyboard */,
 				4B9C8E521D4C56760025B12A /* Info.plist */,
+				4BF713B71D8517AA00F1851E /* CustomCell.swift */,
+				4BF713B91D85237300F1851E /* DetailViewController.swift */,
 			);
 			path = helth;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			files = (
 				4BEAC2F41D4DA390007B4108 /* CalenderViewController.swift in Sources */,
 				4B9C8E491D4C56760025B12A /* ViewController.swift in Sources */,
+				4BF713BA1D85237300F1851E /* DetailViewController.swift in Sources */,
+				4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */,
 				4B9C8E471D4C56760025B12A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

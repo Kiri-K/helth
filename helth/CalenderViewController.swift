@@ -15,7 +15,7 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
 //    "tag"はカレンダー内の日
     var tag: Int!
-    
+    var number: Int! = 0
     @IBOutlet var label: UILabel!
 
     
@@ -40,12 +40,31 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
     //    UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 35
+        if tag == 4 || tag == 6 || tag == 9 || tag == 11{
+            return 30
+        }else if tag == 2{
+            return 28
+        }else{
+            return 31
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath)
+        number = number + 1
+        let cell : CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath) as! CustomCell
+        cell.date.text = String(number)
+        cell.date.userInteractionEnabled = true
+        cell.date.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tap:"))
+        
+        
+        
         return cell
+    }
+    
+    func tap(sender: UITapGestureRecognizer)  {
+        performSegueWithIdentifier("toDetail", sender: nil)
+        //print("aaa")
+        
     }
     
 //    UICollectionViewDelegate

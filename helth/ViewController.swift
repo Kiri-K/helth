@@ -15,89 +15,77 @@ class ViewController: UIViewController {
     @IBOutlet var Graph: UIView!
 //    "tag"はカレンダー内の日付
     var tag: Int! = 0
-    var tag1: Int! = 0
-    var tag2: Int! = 1
-    var tag3: Int! = 2
-    var tag4: Int! = 3
-    var tag5: Int! = 4
-    var tag6: Int! = 5
-    var tag7: Int! = 6
-    var tag8: Int! = 7
-    var tag9: Int! = 8
-    var tag10: Int! = 9
-    var tag11: Int! = 10
-    var tag12: Int! = 11
-
+  
     
 //　　各月のUIButton
     @IBAction func Jan(sender: UIButton) {
         print(sender.tag)
-        tag1 = sender.tag
+        tag = 1
         performSegueWithIdentifier("toCalender", sender: nil)
 
             }
     
     @IBAction func Feb(sender: UIButton) {
         print(sender.tag)
-        tag2 = sender.tag
+        tag = 2
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Mar(sender: UIButton) {
         print(sender.tag)
-        tag3 = sender.tag
+        tag = 3
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Apr(sender: UIButton) {
         print(sender.tag)
-        tag4 = sender.tag
+        tag = 4
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func May(sender: UIButton) {
         print(sender.tag)
-        tag5 = sender.tag
+        tag = 5
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Jun(sender: UIButton) {
         print(sender.tag)
-        tag6 = sender.tag
+        tag = 6
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Jul(sender: UIButton) {
         print(sender.tag)
-        tag7 = sender.tag
+        tag = 7
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Aug(sender: UIButton) {
         print(sender.tag)
-        tag8 = sender.tag
+        tag = 8
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     @IBAction func Sep(sender: UIButton) {
         print(sender.tag)
-        tag9 = sender.tag
+        tag = 9
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func Oct(sender: UIButton) {
         print(sender.tag)
-        tag10 = sender.tag
+        tag = 10
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     @IBAction func Nov(sender: AnyObject) {
         print(sender.tag)
-        tag11 = sender.tag
+        tag = 11
         performSegueWithIdentifier("toCalender", sender: nil)
     }
    
     @IBAction func Dec(sender: UIButton) {
         print(sender.tag)
-        tag12 = sender.tag
+        tag = 12
         performSegueWithIdentifier("toCalender", sender: nil)
     }
     
