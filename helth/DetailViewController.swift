@@ -35,15 +35,14 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func dismiss(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: {})
+    
+    @IBAction func dismiss(sender: UIButton) {
+         self.dismissViewControllerAnimated(true, completion: {})
     }
     
     @IBAction func add(sender: UIButton) {
         ud.setObject(addTextField.text, forKey: String(month) + "/" + String(day))
         task.text = addTextField.text
-        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

@@ -11,7 +11,12 @@ import UIKit
 
 class CalenderViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBAction func backToViewController(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {})
+
+    }
     
+   
     @IBOutlet weak var collectionView: UICollectionView!
 //    "tag"はカレンダー内の日
     var tag: Int!

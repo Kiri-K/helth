@@ -1,5 +1,5 @@
 //
-//  CustomCell.swift
+//  MemoViewController.swift
 //  helth
 //
 //  Created by Kiri on 2016/09/11.
@@ -7,20 +7,24 @@
 //
 import UIKit
 
-class MemoViewController: UICollectionViewCell{
+class MemoViewController:  UIViewController {
+    
+    
    
-    @IBOutlet var addMemo: UITextView!
-    
-    @IBAction func BackToViewController(sender: UIButton) {
-    }
-    
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if(addMemo.isFirstResponder()){
-            addMemo.resignFirstResponder()
-        }
-    }
 
+override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
+    @IBAction func backViewController(sender: UIButton) {
+        
+        self.dismissViewControllerAnimated(true, completion: {})
+
+    }
+    
+    
+    
+        
 }
 
