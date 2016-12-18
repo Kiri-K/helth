@@ -14,12 +14,12 @@
 		4B9C8E511D4C56760025B12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9C8E4F1D4C56760025B12A /* LaunchScreen.storyboard */; };
 		4B9C8E5C1D4C56770025B12A /* helthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E5B1D4C56770025B12A /* helthTests.swift */; };
 		4B9C8E671D4C56770025B12A /* helthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E661D4C56770025B12A /* helthUITests.swift */; };
-		4BDD2B501DE182D800DCA9FE /* CustomTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDD2B4F1DE182D800DCA9FE /* CustomTableView.xib */; };
-		4BDD2B521DE182F500DCA9FE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDD2B511DE182F500DCA9FE /* CustomTableView.swift */; };
 		4BE833E91D8546D800E678BC /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE833E81D8546D800E678BC /* MemoViewController.swift */; };
 		4BEAC2F41D4DA390007B4108 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */; };
 		4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF713B71D8517AA00F1851E /* CustomCell.swift */; };
 		4BF713BA1D85237300F1851E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF713B91D85237300F1851E /* DetailViewController.swift */; };
+		4BF9C1F81E0635070076539F /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BF9C1F71E0635070076539F /* CustomTableViewCell.xib */; };
+		4BF9C1FA1E06353B0076539F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9C1F91E06353B0076539F /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +53,12 @@
 		4B9C8E621D4C56770025B12A /* helthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9C8E661D4C56770025B12A /* helthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helthUITests.swift; sourceTree = "<group>"; };
 		4B9C8E681D4C56770025B12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BDD2B4F1DE182D800DCA9FE /* CustomTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomTableView.xib; path = ../../CustomTableView.xib; sourceTree = "<group>"; };
-		4BDD2B511DE182F500DCA9FE /* CustomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		4BE833E81D8546D800E678BC /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		4BF713B71D8517AA00F1851E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		4BF713B91D85237300F1851E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4BF9C1F71E0635070076539F /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		4BF9C1F91E06353B0076539F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,8 @@
 				4B9C8E4F1D4C56760025B12A /* LaunchScreen.storyboard */,
 				4B9C8E521D4C56760025B12A /* Info.plist */,
 				4B9C8E461D4C56760025B12A /* AppDelegate.swift */,
-				4BDD2B4F1DE182D800DCA9FE /* CustomTableView.xib */,
-				4BDD2B511DE182F500DCA9FE /* CustomTableView.swift */,
+				4BF9C1F71E0635070076539F /* CustomTableViewCell.xib */,
+				4BF9C1F91E06353B0076539F /* CustomTableViewCell.swift */,
 			);
 			path = helth;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				TargetAttributes = {
 					4B9C8E421D4C56760025B12A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = U54A27363Y;
+						DevelopmentTeam = S54MXE8DC3;
 						LastSwiftMigration = 0800;
 					};
 					4B9C8E561D4C56770025B12A = {
@@ -253,7 +253,7 @@
 			files = (
 				4B9C8E511D4C56760025B12A /* LaunchScreen.storyboard in Resources */,
 				4B9C8E4E1D4C56760025B12A /* Assets.xcassets in Resources */,
-				4BDD2B501DE182D800DCA9FE /* CustomTableView.xib in Resources */,
+				4BF9C1F81E0635070076539F /* CustomTableViewCell.xib in Resources */,
 				4B9C8E4C1D4C56760025B12A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +282,8 @@
 				4BEAC2F41D4DA390007B4108 /* CalenderViewController.swift in Sources */,
 				4B9C8E491D4C56760025B12A /* ViewController.swift in Sources */,
 				4BE833E91D8546D800E678BC /* MemoViewController.swift in Sources */,
+				4BF9C1FA1E06353B0076539F /* CustomTableViewCell.swift in Sources */,
 				4BF713BA1D85237300F1851E /* DetailViewController.swift in Sources */,
-				4BDD2B521DE182F500DCA9FE /* CustomTableView.swift in Sources */,
 				4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */,
 				4B9C8E471D4C56760025B12A /* AppDelegate.swift in Sources */,
 			);
@@ -377,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -416,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -429,10 +429,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S54MXE8DC3;
 				INFOPLIST_FILE = helth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiri.helth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 2.3;
@@ -445,10 +446,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S54MXE8DC3;
 				INFOPLIST_FILE = helth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiri.helth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 2.3;

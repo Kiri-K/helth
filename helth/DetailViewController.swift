@@ -20,7 +20,9 @@ class DetailViewController: UIViewController {
     var text = ""
     
     
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         print(month)
         print(day)
@@ -29,6 +31,8 @@ class DetailViewController: UIViewController {
         task.text = text
         addTextField.text = text
         hiduke.text = String(month) + "/" + String(day)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
     //セグメントコントロールの切り替えに使うボタンの宣言
     @IBOutlet weak var januaryButtonOutlet: UIButton!
     
@@ -34,148 +36,205 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var decemberButtonOutlet: UIButton!
     
-//　　　セグメントコントロールで切り替えるViewの宣言
+    //　　　セグメントコントロールで切り替えるViewの宣言
     
     @IBOutlet weak var taskTableViewOutlet: UITableView!
-   
     
     
-//    "tag"はカレンダー内の日付
+    
+    
+    //    "tag"はカレンダー内の日付
     var tag: Int! = 0
-  
+    
     @IBAction func
         FebruaryButton(sender: UIButton) {
         print(sender.tag)
         tag = 2
-    performSegueWithIdentifier("toCalender", sender: nil)
-        }
+        performSegueWithIdentifier("toCalender", sender: nil)
+    }
     
     @IBAction func
         JanuaryButton(sender: UIButton) {
         print(sender.tag)
         tag = 1
-    performSegueWithIdentifier("toCalender", sender: nil)
-        }
+        performSegueWithIdentifier("toCalender", sender: nil)
+    }
     
     @IBAction func MarchButton(sender: UIButton) {
         print(sender.tag)
         tag = 3
-    performSegueWithIdentifier("toCalender", sender: nil)
-        }
+        performSegueWithIdentifier("toCalender", sender: nil)
+    }
     
     
     @IBAction func AprilButton(sender: UIButton) {
         print(sender.tag)
         tag = 4
-    performSegueWithIdentifier("toCalender", sender: nil)
-        }
+        performSegueWithIdentifier("toCalender", sender: nil)
+    }
     
     @IBAction func MayButton(sender: UIButton){
         print(sender.tag)
         tag = 5
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func JunButton(sender: UIButton){
         print(sender.tag)
         tag = 6
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func JulyButton(sender: UIButton){
         print(sender.tag)
         tag = 7
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func AugustButton(sender: UIButton){
         print(sender.tag)
         tag = 8
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func SeptemberButton(sender: UIButton){
         print(sender.tag)
         tag = 9
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     @IBAction func OctoberButton(sender: UIButton) {
         print(sender.tag)
         tag = 10
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     @IBAction func NovemberButton(sender: UIButton) {
         print(sender.tag)
         tag = 11
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     @IBAction func DecemberButton(sender: UIButton) {
         print(sender.tag)
         tag = 12
-    performSegueWithIdentifier("toCalender", sender: nil)
+        performSegueWithIdentifier("toCalender", sender: nil)
     }
     
     
     
     @IBAction func testSegmentedControl(sender: UISegmentedControl) {
-    
+        
+        
+        //    セグメント番号で分岐させる
+        switch sender.selectedSegmentIndex {
             
-//    セグメント番号で分岐させる
-            switch sender.selectedSegmentIndex {
-
-            case 0:
-                taskTableViewOutlet.alpha = 0
-                januaryButtonOutlet.alpha = 1
-                februaryButtonOutlet.alpha = 1
-                marchButtonOutlet.alpha = 1
-                aprilButtonOutlet.alpha = 1
-                mayButtonOutlet.alpha = 1
-                junButtonOutlet.alpha = 1
-                julyButtonOutlet.alpha = 1
-                augustButtonOutlet.alpha = 1
-                septemberButtonOutlet.alpha = 1
-                octoberButtonOutlet.alpha = 1
-                novemberButtonOutlet.alpha = 1
-                decemberButtonOutlet.alpha = 1
-                // "カレンダー"を押した時
-                break
-                
-            case 1:
-                taskTableViewOutlet.alpha = 1
-                januaryButtonOutlet.alpha = 0
-                februaryButtonOutlet.alpha = 0
-                marchButtonOutlet.alpha = 0
-                aprilButtonOutlet.alpha = 0
-                mayButtonOutlet.alpha = 0
-                junButtonOutlet.alpha = 0
-                julyButtonOutlet.alpha = 0
-                augustButtonOutlet.alpha = 0
-                septemberButtonOutlet.alpha = 0
-                octoberButtonOutlet.alpha = 0
-                novemberButtonOutlet.alpha = 0
-                decemberButtonOutlet.alpha = 0
-                // "グラフ"を押した時
-                break
-                
-            default:
-                taskTableViewOutlet.alpha = 0
-                januaryButtonOutlet.alpha = 1
-                februaryButtonOutlet.alpha = 1
-                marchButtonOutlet.alpha = 1
-                aprilButtonOutlet.alpha = 1
-                mayButtonOutlet.alpha = 1
-                junButtonOutlet.alpha = 1
-                julyButtonOutlet.alpha = 1
-                augustButtonOutlet.alpha = 1
-                septemberButtonOutlet.alpha = 1
-                octoberButtonOutlet.alpha = 1
-                novemberButtonOutlet.alpha = 1
-                decemberButtonOutlet.alpha = 1
-                // それ以外
-                break
+        case 0:
+            taskTableViewOutlet.alpha = 0
+            januaryButtonOutlet.alpha = 1
+            februaryButtonOutlet.alpha = 1
+            marchButtonOutlet.alpha = 1
+            aprilButtonOutlet.alpha = 1
+            mayButtonOutlet.alpha = 1
+            junButtonOutlet.alpha = 1
+            julyButtonOutlet.alpha = 1
+            augustButtonOutlet.alpha = 1
+            septemberButtonOutlet.alpha = 1
+            octoberButtonOutlet.alpha = 1
+            novemberButtonOutlet.alpha = 1
+            decemberButtonOutlet.alpha = 1
+            // "カレンダー"を押した時
+            break
+            
+        case 1:
+            taskTableViewOutlet.alpha = 1
+            januaryButtonOutlet.alpha = 0
+            februaryButtonOutlet.alpha = 0
+            marchButtonOutlet.alpha = 0
+            aprilButtonOutlet.alpha = 0
+            mayButtonOutlet.alpha = 0
+            junButtonOutlet.alpha = 0
+            julyButtonOutlet.alpha = 0
+            augustButtonOutlet.alpha = 0
+            septemberButtonOutlet.alpha = 0
+            octoberButtonOutlet.alpha = 0
+            novemberButtonOutlet.alpha = 0
+            decemberButtonOutlet.alpha = 0
+            // "グラフ"を押した時
+            break
+            
+        default:
+            taskTableViewOutlet.alpha = 0
+            januaryButtonOutlet.alpha = 1
+            februaryButtonOutlet.alpha = 1
+            marchButtonOutlet.alpha = 1
+            aprilButtonOutlet.alpha = 1
+            mayButtonOutlet.alpha = 1
+            junButtonOutlet.alpha = 1
+            julyButtonOutlet.alpha = 1
+            augustButtonOutlet.alpha = 1
+            septemberButtonOutlet.alpha = 1
+            octoberButtonOutlet.alpha = 1
+            novemberButtonOutlet.alpha = 1
+            decemberButtonOutlet.alpha = 1
+            // それ以外
+            break
         }
-       }
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        let cell:CustomTableViewCell = (tableView.dequeueReusableCellWithIdentifier("Cell") as? CustomTableViewCell
+            )!
+        
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MM"
+        let now = NSDate()
+        var month :String = formatter.stringFromDate(now)
+        print(month)
+        formatter.dateFormat = "dd"
+        var day : String = formatter.stringFromDate(now)
+        print(day)
+        
+        var key : String = month + "/" + day
+        
+        cell.date.text = key
+
+        
+        
+        if indexPath.row == 0{
+            
+        }
+        
+        
+        
+        
+        
+        
+       
+        
+        return cell
+        
+    }
+    
+    func  numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5;
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75
+        
+    }
+    
+    func  tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     
     
     
@@ -190,10 +249,20 @@ class ViewController: UIViewController {
         }
     }
     
-       override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
+        self.taskTableViewOutlet.delegate = self
+        self.taskTableViewOutlet.dataSource = self
+        
+        
+        let nib:UINib = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        
+        self.taskTableViewOutlet.registerNib(nib, forCellReuseIdentifier: "Cell")
+        
+        
+        
+        
     }
     
     @IBAction func moveToMome(sender: UIButton) {
@@ -204,6 +273,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
