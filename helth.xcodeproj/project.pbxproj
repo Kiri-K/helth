@@ -14,6 +14,7 @@
 		4B9C8E511D4C56760025B12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9C8E4F1D4C56760025B12A /* LaunchScreen.storyboard */; };
 		4B9C8E5C1D4C56770025B12A /* helthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E5B1D4C56770025B12A /* helthTests.swift */; };
 		4B9C8E671D4C56770025B12A /* helthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C8E661D4C56770025B12A /* helthUITests.swift */; };
+		4BC0839D1E504EDA00EB9D51 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0839C1E504EDA00EB9D51 /* CustomDate.swift */; };
 		4BE833E91D8546D800E678BC /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE833E81D8546D800E678BC /* MemoViewController.swift */; };
 		4BEAC2F41D4DA390007B4108 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */; };
 		4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF713B71D8517AA00F1851E /* CustomCell.swift */; };
@@ -53,6 +54,7 @@
 		4B9C8E621D4C56770025B12A /* helthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9C8E661D4C56770025B12A /* helthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helthUITests.swift; sourceTree = "<group>"; };
 		4B9C8E681D4C56770025B12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC0839C1E504EDA00EB9D51 /* CustomDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		4BE833E81D8546D800E678BC /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		4BEAC2F31D4DA390007B4108 /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		4BF713B71D8517AA00F1851E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				4B9C8E461D4C56760025B12A /* AppDelegate.swift */,
 				4BF9C1F71E0635070076539F /* CustomTableViewCell.xib */,
 				4BF9C1F91E06353B0076539F /* CustomTableViewCell.swift */,
+				4BC0839C1E504EDA00EB9D51 /* CustomDate.swift */,
 			);
 			path = helth;
 			sourceTree = "<group>";
@@ -206,22 +209,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Kiri;
 				TargetAttributes = {
 					4B9C8E421D4C56760025B12A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = S54MXE8DC3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					4B9C8E561D4C56770025B12A = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						TestTargetID = 4B9C8E421D4C56760025B12A;
 					};
 					4B9C8E611D4C56770025B12A = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						TestTargetID = 4B9C8E421D4C56760025B12A;
 					};
 				};
@@ -283,6 +287,7 @@
 				4B9C8E491D4C56760025B12A /* ViewController.swift in Sources */,
 				4BE833E91D8546D800E678BC /* MemoViewController.swift in Sources */,
 				4BF9C1FA1E06353B0076539F /* CustomTableViewCell.swift in Sources */,
+				4BC0839D1E504EDA00EB9D51 /* CustomDate.swift in Sources */,
 				4BF713BA1D85237300F1851E /* DetailViewController.swift in Sources */,
 				4BF713B81D8517AA00F1851E /* CustomCell.swift in Sources */,
 				4B9C8E471D4C56760025B12A /* AppDelegate.swift in Sources */,
@@ -354,8 +359,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -399,8 +406,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -419,6 +428,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -431,12 +441,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S54MXE8DC3;
 				INFOPLIST_FILE = helth/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiri.helth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,12 +459,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S54MXE8DC3;
 				INFOPLIST_FILE = helth/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiri.helth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -465,7 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/helth.app/helth";
 			};
 			name = Debug;
@@ -478,7 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/helth.app/helth";
 			};
 			name = Release;
@@ -490,7 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = helth;
 			};
 			name = Debug;
@@ -502,7 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.helthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = helth;
 			};
 			name = Release;

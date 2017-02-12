@@ -11,8 +11,8 @@ import UIKit
 
 class CalenderViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBAction func backToViewController(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
+    @IBAction func backToViewController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {})
 
     }
     
@@ -45,7 +45,8 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     //    UICollectionViewDataSource
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//    それぞれのカレンダー内の日付
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if tag == 4 || tag == 6 || tag == 9 || tag == 11{
             return 30
         }else if tag == 2{
@@ -55,11 +56,11 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         number = number + 1
-        let cell : CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath) as! CustomCell
+        let cell : CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! CustomCell
         cell.date.text = String(number)
-        cell.date.userInteractionEnabled = true
+        cell.date.isUserInteractionEnabled = true
         cell.date.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CalenderViewController.tap(_:))))
         
         
@@ -67,21 +68,36 @@ class CalenderViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-    func tap(sender: UITapGestureRecognizer)  {
+    func tap(_ sender: UITapGestureRecognizer)  {
         let label = sender.view as! UILabel
         day = Int(label.text!)!
         
-        performSegueWithIdentifier("toDetail", sender: nil)
+        performSegue(withIdentifier: "toDetail", sender: nil)
         
         //print("aaa")
     
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail"{
-            let detailViewControlloer = segue.destinationViewController as! DetailViewController
-            detailViewControlloer.month = self.tag
-            detailViewControlloer.day = self.day
+            let detailViewControlloer = segue.destination as! DetailViewController
+            
+            if self.tag < 10{
+                detailViewControlloer.month = "0" + String(self.tag)
+                
+            }else {
+                detailViewControlloer.month = String(self.tag)
+            }
+            
+            if self.day < 10{
+                detailViewControlloer.day = "0" + String(self.day)
+                
+            }else {
+                detailViewControlloer.day = String(self.day)
+            }
+            
+            
+
             
         }
     }

@@ -9,7 +9,15 @@
 import UIKit
 
 
+
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
+    
+    let ud = UserDefaults.standard
+    var contents :String = ""
+    var month :String = String()
+    var day :String = String()
+    var arr :Array<String>= Array<String>()
     
     //セグメントコントロールの切り替えに使うボタンの宣言
     @IBOutlet weak var januaryButtonOutlet: UIButton!
@@ -46,82 +54,114 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
     //    "tag"はカレンダー内の日付
     var tag: Int! = 0
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.taskTableViewOutlet.delegate = self
+        self.taskTableViewOutlet.dataSource = self
+        let nib:UINib = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        self.taskTableViewOutlet.register(nib, forCellReuseIdentifier: "Cell")
+        
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let now = Date()
+        month = formatter.string(from: now)
+        print(month)
+        formatter.dateFormat = "dd"
+        day = formatter.string(from: now)
+        print(day)
+        
+        UserDefaults.standard.register(defaults: [String(month) + "/" + String(day):""])
+        contents = ud.object(forKey: String(month) + "/" + String(day)) as! String
+        arr = contents.components(separatedBy: "・")
+        arr.remove(at: 0)
+        
+        print(arr)
+        print(contents)
+        
+    }
+    
+    
     @IBAction func
-        FebruaryButton(sender: UIButton) {
+        FebruaryButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 2
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
     @IBAction func
-        JanuaryButton(sender: UIButton) {
+        JanuaryButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 1
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func MarchButton(sender: UIButton) {
+    @IBAction func MarchButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 3
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
     
-    @IBAction func AprilButton(sender: UIButton) {
+    @IBAction func AprilButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 4
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func MayButton(sender: UIButton){
+    @IBAction func MayButton(_ sender: UIButton){
         print(sender.tag)
         tag = 5
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func JunButton(sender: UIButton){
+    @IBAction func JunButton(_ sender: UIButton){
         print(sender.tag)
         tag = 6
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func JulyButton(sender: UIButton){
+    @IBAction func JulyButton(_ sender: UIButton){
         print(sender.tag)
         tag = 7
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func AugustButton(sender: UIButton){
+    @IBAction func AugustButton(_ sender: UIButton){
         print(sender.tag)
         tag = 8
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func SeptemberButton(sender: UIButton){
+    @IBAction func SeptemberButton(_ sender: UIButton){
         print(sender.tag)
         tag = 9
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
-    @IBAction func OctoberButton(sender: UIButton) {
+    @IBAction func OctoberButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 10
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
-    @IBAction func NovemberButton(sender: UIButton) {
+    @IBAction func NovemberButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 11
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
-    @IBAction func DecemberButton(sender: UIButton) {
+    @IBAction func DecemberButton(_ sender: UIButton) {
         print(sender.tag)
         tag = 12
-        performSegueWithIdentifier("toCalender", sender: nil)
+        performSegue(withIdentifier: "toCalender", sender: nil)
     }
     
     
     
-    @IBAction func testSegmentedControl(sender: UISegmentedControl) {
+    @IBAction func testSegmentedControl(_ sender: UISegmentedControl) {
         
         
         //    セグメント番号で分岐させる
@@ -182,91 +222,64 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let cell:CustomTableViewCell = (tableView.dequeueReusableCellWithIdentifier("Cell") as? CustomTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:CustomTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "Cell") as? CustomTableViewCell
             )!
         
         
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "MM"
-        let now = NSDate()
-        var month :String = formatter.stringFromDate(now)
-        print(month)
-        formatter.dateFormat = "dd"
-        var day : String = formatter.stringFromDate(now)
-        print(day)
         
-        var key : String = month + "/" + day
-        
+        let key : String = month + "/" + day
         cell.date.text = key
-
-        
-        
-        if indexPath.row == 0{
-            
-        }
-        
-        
-        
-        
-        
-        
-       
-        
+        cell.preview.text = arr[indexPath.row]
         return cell
         
     }
     
-    func  numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5;
+    func  numberOfSections(in tableView: UITableView) -> Int {
+        return 7;
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section == 0{
+            return month + "/" + day
+            
+        }else {
+            
+            var dayNum = Int(self.day)! + 1
+            return month + "/" + String(dayNum)
+            
+        }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
         
     }
     
-    func  tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr.count
     }
     
     
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toCalender" {
             
-            let calenderViewController = segue.destinationViewController as! CalenderViewController
+            let calenderViewController = segue.destination as! CalenderViewController
             calenderViewController.tag = self.tag
             
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.taskTableViewOutlet.delegate = self
-        self.taskTableViewOutlet.dataSource = self
-        
-        
-        let nib:UINib = UINib(nibName: "CustomTableViewCell", bundle: nil)
-        
-        self.taskTableViewOutlet.registerNib(nib, forCellReuseIdentifier: "Cell")
-        
-        
-        
-        
-    }
     
-    @IBAction func moveToMome(sender: UIButton) {
-        performSegueWithIdentifier("MemoView", sender: nil)
+    @IBAction func moveToMome(_ sender: UIButton) {
+        performSegue(withIdentifier: "MemoView", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

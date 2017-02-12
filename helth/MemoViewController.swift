@@ -17,9 +17,9 @@ override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func backViewController(sender: UIButton) {
+    @IBAction func backViewController(_ sender: UIButton) {
         
-        self.dismissViewControllerAnimated(true, completion: {})
+        self.dismiss(animated: true, completion: {})
 
     }
     
