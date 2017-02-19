@@ -11,6 +11,20 @@ import UIKit
 
 class CalenderViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var backbutton: UIButton!
+    
+    
+    override func viewDidLayoutSubviews() {
+        
+        backbutton.frame = CGRect(x: view.frame.size.width/2 - ((view.frame.size.height-65)*0.12)/2 ,y: backbutton.frame.origin.y,width: (view.frame.size.height-65)*0.12,height: (view.frame.size.height-65)*0.12)
+        
+        backbutton.layer.masksToBounds = true;
+        backbutton.layer.cornerRadius = backbutton.layer.frame.size.height  / 2
+        
+        
+    }
+    
+    
     @IBAction func backToViewController(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: {})
 

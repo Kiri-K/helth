@@ -18,21 +18,21 @@ class CustomDate {
         self.day = day
     }
     
-    func nextDay(date : CustomDate) -> CustomDate {
+    func nextDay() -> CustomDate {
         
         let nextDate : CustomDate = CustomDate(month: 0,day: 0)
         
         
         
-        if date.month == 1 || date.month == 3 || date.month == 5 || date.month == 7 || date.month == 8 || date.month == 10 || date.month == 12 {
+        if month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 {
             
-            if date.day != 31{
-                nextDate.month = date.month
-                nextDate.day = date.day + 1
+            if day != 31{
+                nextDate.month = month
+                nextDate.day = day + 1
                 
             }else{
-                if date.month != 12{
-                    nextDate.month = date.month + 1
+                if month != 12{
+                    nextDate.month = month + 1
                 }else{
                     nextDate.month = 1
                 }
@@ -40,23 +40,23 @@ class CustomDate {
             }
             
             
-        }else if  date.month == 4 || date.month == 6 || date.month == 9 || date.month == 11{
+        }else if  month == 4 || month == 6 || month == 9 || month == 11{
             
-            if date.day != 30 {
-                nextDate.month = date.month
-                nextDate.day = date.day + 1
+            if day != 30 {
+                nextDate.month = month
+                nextDate.day = day + 1
             }else{
-                nextDate.month = date.month + 1
+                nextDate.month = month + 1
                 nextDate.day = 1
             }
             
             
         }else {
-            if date.day != 28{
-                nextDate.month = date.month
-                nextDate.day = date.day + 1
+            if day != 28{
+                nextDate.month = month
+                nextDate.day = day + 1
             }else{
-                nextDate.month  = date.month + 1
+                nextDate.month  = month + 1
                 nextDate.day = 1
             }
             
@@ -66,6 +66,27 @@ class CustomDate {
         
         
     }
+    
+    func getMonth() -> String {
+        
+        if month < 10 {
+            return "0" + String(month)
+        }else{
+        
+        return String(month)
+        }
+    }
+    
+    func getDay() -> String {
+        if day < 10 {
+            return "0" + String(day)
+        }else{
+            
+            return String(day)
+        }
+    }
+    
+    
     
     
     
