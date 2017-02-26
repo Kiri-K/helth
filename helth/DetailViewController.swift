@@ -19,6 +19,12 @@ class DetailViewController: UIViewController {
     let ud = UserDefaults.standard
     var text = ""
     
+    @IBOutlet weak var saveButtonIBOutlet: UIButton!
+    @IBOutlet weak var backButtonIBOutlet: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
+    
+    
+    
     
     
     override func viewDidLoad() {

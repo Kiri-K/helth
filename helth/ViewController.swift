@@ -44,7 +44,9 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var decemberButtonOutlet: UIButton!
     
+    
     //　　　セグメントコントロールで切り替えるViewの宣言
+    @IBOutlet weak var writeButtonOutlet: UIButton!
     
     @IBOutlet weak var taskTableViewOutlet: UITableView!
     
@@ -54,10 +56,22 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
     //    "tag"はカレンダー内の日付
     var tag: Int! = 0
     
+    var dateArray : [CustomDate] = Array()
+    var contentsArray : [Array<String>] = Array()
+    
+    override func viewDidLayoutSubviews() {
+        writeButtonOutlet.layer.masksToBounds = true;
+        writeButtonOutlet.layer.cornerRadius = writeButtonOutlet.layer.frame.size.height  / 2
+        
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.taskTableViewOutlet.delegate = self
         self.taskTableViewOutlet.dataSource = self
@@ -70,18 +84,41 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
         formatter.dateFormat = "MM"
         let now = Date()
         month = formatter.string(from: now)
-        print(month)
         formatter.dateFormat = "dd"
         day = formatter.string(from: now)
-        print(day)
         
-        UserDefaults.standard.register(defaults: [String(month) + "/" + String(day):""])
-        contents = ud.object(forKey: String(month) + "/" + String(day)) as! String
+        var customDate = CustomDate(month: Int(month)!,day: Int(day)!)
+        dateArray.append(customDate)
+        
+        UserDefaults.standard.register(defaults: [month + "/" + day:""])
+        contents = ud.object(forKey: month + "/" + day) as! String
         arr = contents.components(separatedBy: "・")
         arr.remove(at: 0)
+        contentsArray.append(arr)
         
+        print(month)
         print(arr)
-        print(contents)
+        
+        
+        
+        for _ in 0 ... 5{
+            customDate = customDate.nextDay()
+            dateArray.append(customDate)
+            
+            arr = Array()
+            UserDefaults.standard.register(defaults: [customDate.getMonth() + "/" + customDate.getDay():""])
+            contents = ud.object(forKey: customDate.getMonth() + "/" + customDate.getDay()) as! String
+            arr = contents.components(separatedBy: "・")
+            arr.remove(at: 0)
+            contentsArray.append(arr)
+            
+            
+            print(customDate.getMonth())
+            print(arr)
+        }
+        
+        
+        
         
     }
     
@@ -227,30 +264,20 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
         let cell:CustomTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "Cell") as? CustomTableViewCell
             )!
         
-        
-        
-        let key : String = month + "/" + day
+        let key : String = dateArray[indexPath.section].getMonth() + "/" + dateArray[indexPath.section].getDay()
         cell.date.text = key
-        cell.preview.text = arr[indexPath.row]
+        cell.preview.text = (contentsArray[indexPath.section])[indexPath.row]
         return cell
         
     }
     
     func  numberOfSections(in tableView: UITableView) -> Int {
-        return 7;
+        return dateArray.count;
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        if section == 0{
-            return month + "/" + day
-            
-        }else {
-            
-            var dayNum = Int(self.day)! + 1
-            return month + "/" + String(dayNum)
-            
-        }
+        return dateArray[section].getMonth() + "/" + dateArray[section].getDay()
     }
     
     
@@ -260,7 +287,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
     }
     
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return contentsArray[section].count
     }
     
     
